@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+import Carousel from './Carousel/Carousel';
 
-function App() {
+export default function App() {
+  const someRandomStuff = [
+    'Slide 1',
+    'Slide 2',
+    'Slide 3',
+    'Slide 4',
+    'Slide 5',
+    'Slide 6',
+    'Slide 7',
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppWrapper>
+      <h1>Hello World </h1>
+      <div className="content-box">Hier könnte Ihr Content stehen </div>
+      <Carousel carouselContent={someRandomStuff} />
+    </AppWrapper>
   );
 }
 
-export default App;
+const AppWrapper = styled.main`
+  background: salmon;
+
+  font-family: sans-serif;
+  color: ivory;
+  position: relative;
+
+  h1 {
+    color: ivory;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+      'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    padding-top: 1.5rem;
+  }
+
+  .content-box {
+    padding: 2rem 5rem;
+    height: 50vh;
+  }
+`;
